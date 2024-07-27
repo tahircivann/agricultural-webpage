@@ -71,12 +71,14 @@ export function ProductShowcase() {
 
 function createProductCards(count) {
   let cards = '';
+  const prices = [19.99, 24.99, 29.99, 34.99, 39.99, 44.99, 49.99, 54.99, 59.99];
   for (let i = 1; i <= count; i++) {
     cards += `
       <div class="product-card">
-        <img src="https://via.placeholder.com/250" alt="Product ${i}">
+        <img src="https://caldena.com/zjed-content/uploads/2020/09/caldena_packshoty_agravita-cu_500x500_240410_pp.png" alt="Product ${i}">
         <h3>Product ${i}</h3>
         <p>Brief description of Product ${i}.</p>
+        <p class="price">$${prices[i - 1].toFixed(2)}</p>
         <button onclick="location.hash='#product/${i}'">Learn More</button>
         <button onclick="addToCart(${i})">Add to Cart</button>
       </div>
@@ -86,16 +88,18 @@ function createProductCards(count) {
 }
 
 export function ProductDetail(productId) {
+  const prices = [19.99, 24.99, 29.99, 34.99, 39.99, 44.99, 49.99, 54.99, 59.99];
   const detailPage = document.createElement('section');
   detailPage.className = 'product-details-page';
   detailPage.innerHTML = `
     <div class="product-overview">
       <div class="carousel">
-        <img src="https://via.placeholder.com/600x400" alt="Product Image 3">
+        <img src="https://caldena.com/zjed-content/uploads/2020/09/caldena_packshoty_agravita-cu_500x500_240410_pp.png" alt="Product Image 3">
       </div>
       <div class="details">
         <h2>Product ${productId}</h2>
         <p>Brief introduction of Product ${productId}.</p>
+        <p class="price">$${prices[productId - 1].toFixed(2)}</p>
       </div>
     </div>
     <div class="tabbed-content">

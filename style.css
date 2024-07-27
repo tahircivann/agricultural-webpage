@@ -183,6 +183,12 @@ footer {
   opacity: 0.9;
 }
 
+.product-card .price {
+  font-size: 1.2em;
+  color: #333;
+  margin: 10px 0;
+}
+
 .product-card button {
   padding: 10px;
   background-color: #006600;
@@ -281,6 +287,12 @@ footer {
 .details p {
   font-size: 1.2em;
   color: #666;
+}
+
+.details .price {
+  font-size: 1.5em;
+  color: #333;
+  margin: 10px 0;
 }
 
 .tabbed-content {
