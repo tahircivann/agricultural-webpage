@@ -3,7 +3,7 @@ export function Hero() {
     hero.className = 'hero';
     hero.innerHTML = `
       <div class="hero-image">
-      <button>Explore Products</button>
+      <button onclick="location.hash='#products'">Explore Products</button>
     `;
     return hero;
   }
