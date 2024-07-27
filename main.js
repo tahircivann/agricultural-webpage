@@ -5,7 +5,7 @@ import { Footer } from './components/footer.js';
 import { Contact } from './components/contact.js';
 
 const app = document.getElementById('app');
-const cart = [];
+window.cart = []; // Make the cart globally available
 
 function renderHomePage() {
   app.innerHTML = '';
@@ -143,6 +143,7 @@ export function ProductDetail(productId) {
 
 window.addToCart = function(productId) {
   cart.push(productId);
+  updateCartCount();
   showToast(`Product ${productId} has been added to the cart.`);
 }
 
@@ -174,6 +175,7 @@ function createCartItems() {
 
 window.removeFromCart = function(index) {
   cart.splice(index, 1);
+  updateCartCount();
   renderCartPage();
 }
 
@@ -195,6 +197,13 @@ function addTabFunctionality() {
       document.getElementById(tab.getAttribute('data-tab')).classList.add('active');
     });
   });
+}
+
+function updateCartCount() {
+  const cartCount = document.querySelector('.cart-count');
+  if (cartCount) {
+    cartCount.textContent = cart.length;
+  }
 }
 
 function showToast(message) {

@@ -35,6 +35,52 @@ nav a:hover {
   color: #369f26;
 }
 
+/* Cart Icon Styles */
+.cart-icon {
+  position: relative;
+  cursor: pointer;
+}
+
+.cart-icon .material-icons {
+  font-size: 24px;
+  color: #006600;
+}
+
+.cart-icon .cart-count {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 12px;
+}
+
+/* Toast Notification */
+.toast {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  font-size: 17px;
+  opacity: 0;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.toast.show {
+  visibility: visible;
+  opacity: 1;
+}
+
 /* Hero Section */
 .hero {
   position: relative;
@@ -379,30 +425,6 @@ footer {
 .call-to-action button:last-child:hover {
   background-color: #e6e6e6;
   transform: scale(1.05);
-}
-
-/* Toast Notification */
-.toast {
-  visibility: hidden;
-  min-width: 250px;
-  margin-left: -125px;
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  border-radius: 2px;
-  padding: 16px;
-  position: fixed;
-  z-index: 1;
-  left: 50%;
-  bottom: 30px;
-  font-size: 17px;
-  opacity: 0;
-  transition: opacity 0.3s, visibility 0.3s;
-}
-
-.toast.show {
-  visibility: visible;
-  opacity: 1;
 }
 
 @keyframes fadeIn {
