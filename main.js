@@ -141,9 +141,9 @@ export function ProductDetail(productId) {
   return detailPage;
 }
 
-function addToCart(productId) {
+window.addToCart = function(productId) {
   cart.push(productId);
-  alert(`Product ${productId} has been added to the cart.`);
+  showToast(`Product ${productId} has been added to the cart.`);
 }
 
 export function Cart() {
@@ -172,12 +172,12 @@ function createCartItems() {
   return items;
 }
 
-function removeFromCart(index) {
+window.removeFromCart = function(index) {
   cart.splice(index, 1);
   renderCartPage();
 }
 
-function checkout() {
+window.checkout = function() {
   alert('Proceeding to checkout...');
   // Implement the checkout process
 }
@@ -195,4 +195,22 @@ function addTabFunctionality() {
       document.getElementById(tab.getAttribute('data-tab')).classList.add('active');
     });
   });
+}
+
+function showToast(message) {
+  const toast = document.createElement('div');
+  toast.className = 'toast';
+  toast.textContent = message;
+  document.body.appendChild(toast);
+
+  setTimeout(() => {
+    toast.classList.add('show');
+  }, 100);
+
+  setTimeout(() => {
+    toast.classList.remove('show');
+    setTimeout(() => {
+      document.body.removeChild(toast);
+    }, 300);
+  }, 3000);
 }
