@@ -1,7 +1,7 @@
 export function Header() {
   const header = document.createElement('header');
   header.innerHTML = `
-    <img src="src="https://caldena.com/zjed-content/themes/caldena/assets/images/logo.svg"" alt="Logo">
+    <img src="https://caldena.com/zjed-content/themes/caldena/assets/images/logo.svg" alt="Logo">
     <nav>
       <a href="#">Home</a>
       <a href="#products">Products</a>
