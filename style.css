@@ -41,14 +41,15 @@ nav a:hover {
 /* Hero Section */
 .hero {
   position: relative;
-  background-image: url('https://via.placeholder.com/1200x400');
+  background-image: url('https://caldena.com/zjed-content/uploads/2024/04/240412_slider_prev_03_eng2.jpg');
   background-size: cover;
   background-position: center;
   text-align: center;
-  color: white;
+  color: #000566;
   padding: 100px 20px;
   min-height: 400px;
-  /* Ensure minimum height */
+
+
 }
 
 .hero h1 {
@@ -115,7 +116,7 @@ footer {
 /* Responsive Grid for Product Showcase */
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   padding: 20px;
 }
@@ -125,11 +126,12 @@ footer {
   border-radius: 5px;
   padding: 20px;
   text-align: center;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .product-card:hover {
   transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .product-card img {
@@ -137,6 +139,11 @@ footer {
   height: auto;
   border-bottom: 1px solid #ccc;
   padding-bottom: 10px;
+  transition: opacity 0.3s ease;
+}
+
+.product-card:hover img {
+  opacity: 0.9;
 }
 
 /* Contact Form */
@@ -173,4 +180,22 @@ footer {
   padding: 20px;
   min-height: 800px;
   /* Ensure minimum height */
+}
+
+.product-detail-section {
+  padding: 20px;
+}
+
+.product-detail {
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }

@@ -2,7 +2,7 @@ export function Hero() {
     const hero = document.createElement('section');
     hero.className = 'hero';
     hero.innerHTML = `
-      <h1>Our Commitment to Sustainability and Innovation</h1>
+      <div class="hero-image">
       <button>Explore Products</button>
     `;
     return hero;
