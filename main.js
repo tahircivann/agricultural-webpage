@@ -5,6 +5,7 @@ import { Footer } from './components/footer.js';
 import { Contact } from './components/contact.js';
 
 const app = document.getElementById('app');
+const cart = [];
 
 function renderHomePage() {
   app.innerHTML = '';
@@ -35,6 +36,13 @@ function renderProductDetailPage(productId) {
   app.appendChild(Footer());
 }
 
+function renderCartPage() {
+  app.innerHTML = '';
+  app.appendChild(Header());
+  app.appendChild(Cart());
+  app.appendChild(Footer());
+}
+
 window.addEventListener('hashchange', () => {
   if (window.location.hash.startsWith('#product/')) {
     const productId = window.location.hash.split('/')[1];
@@ -43,6 +51,8 @@ window.addEventListener('hashchange', () => {
     renderProductsPage();
   } else if (window.location.hash === '#contact') {
     renderContactPage();
+  } else if (window.location.hash === '#cart') {
+    renderCartPage();
   } else {
     renderHomePage();
   }
@@ -68,18 +78,19 @@ function createProductCards(count) {
         <h3>Product ${i}</h3>
         <p>Brief description of Product ${i}.</p>
         <button onclick="location.hash='#product/${i}'">Learn More</button>
+        <button onclick="addToCart(${i})">Add to Cart</button>
       </div>
     `;
   }
   return cards;
 }
+
 export function ProductDetail(productId) {
   const detailPage = document.createElement('section');
   detailPage.className = 'product-details-page';
   detailPage.innerHTML = `
     <div class="product-overview">
       <div class="carousel">
-
         <img src="https://via.placeholder.com/600x400" alt="Product Image 3">
       </div>
       <div class="details">
@@ -121,13 +132,54 @@ export function ProductDetail(productId) {
     </div>
     <div class="call-to-action">
       <button onclick="location.hash='#contact'">Contact Sales</button>
-      <button>Add to Cart</button>
+      <button onclick="addToCart(${productId})">Add to Cart</button>
     </div>
   `;
   setTimeout(() => {
     addTabFunctionality();
   }, 0);
   return detailPage;
+}
+
+function addToCart(productId) {
+  cart.push(productId);
+  alert(`Product ${productId} has been added to the cart.`);
+}
+
+export function Cart() {
+  const cartSection = document.createElement('section');
+  cartSection.className = 'cart-page';
+  cartSection.innerHTML = `
+    <h2>Shopping Cart</h2>
+    ${createCartItems()}
+    <div class="cart-actions">
+      <button onclick="checkout()">Checkout</button>
+    </div>
+  `;
+  return cartSection;
+}
+
+function createCartItems() {
+  if (cart.length === 0) {
+    return '<p>Your cart is empty.</p>';
+  }
+
+  let items = '<ul>';
+  cart.forEach((productId, index) => {
+    items += `<li>Product ${productId} <button onclick="removeFromCart(${index})">Remove</button></li>`;
+  });
+  items += '</ul>';
+  return items;
+}
+
+function removeFromCart(index) {
+  cart.splice(index, 1);
+  renderCartPage();
+}
+
+function checkout() {
+  alert('Proceeding to checkout...');
+  // Implement the checkout process
 }
 
 function addTabFunctionality() {

@@ -9,7 +9,6 @@ body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
   background-color: #ffffff;
-  /* Add a background color */
 }
 
 /* Header Styles */
@@ -19,7 +18,6 @@ header {
   align-items: center;
   padding: 10px 20px;
   background-color: #e6f2e6;
-  /* Dark Green */
 }
 
 header img {
@@ -35,7 +33,6 @@ nav a {
 
 nav a:hover {
   color: #369f26;
-  /* Light Green */
 }
 
 /* Hero Section */
@@ -48,8 +45,6 @@ nav a:hover {
   color: #000566;
   padding: 100px 20px;
   min-height: 400px;
-
-
 }
 
 .hero h1 {
@@ -85,9 +80,7 @@ nav a:hover {
   justify-content: space-around;
   padding: 50px 20px;
   background-color: #e6f2e6;
-  /* Very Light Green */
   min-height: 200px;
-  /* Ensure minimum height */
 }
 
 .introduction .icon {
@@ -106,11 +99,9 @@ nav a:hover {
 footer {
   padding: 20px;
   background-color: #004d00;
-  /* Dark Green */
   color: white;
   text-align: center;
   min-height: 100px;
-  /* Ensure minimum height */
 }
 
 /* Responsive Grid for Product Showcase */
@@ -146,6 +137,19 @@ footer {
   opacity: 0.9;
 }
 
+.product-card button {
+  padding: 10px;
+  background-color: #006600;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.product-card button:hover {
+  background-color: #004d00;
+}
+
 /* Contact Form */
 .contact-form {
   display: flex;
@@ -179,7 +183,6 @@ footer {
   margin: 0 auto;
   padding: 20px;
   min-height: 800px;
-  /* Ensure minimum height */
 }
 
 .product-detail-section {
@@ -290,6 +293,59 @@ footer {
   color: #666;
 }
 
+/* Shopping Cart */
+.cart-page {
+  padding: 40px 20px;
+}
+
+.cart-page h2 {
+  margin-bottom: 20px;
+}
+
+.cart-page ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cart-page li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.cart-page button {
+  background-color: #006600;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 5px 10px;
+}
+
+.cart-page button:hover {
+  background-color: #004d00;
+}
+
+.cart-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.cart-actions button {
+  padding: 10px 20px;
+  background-color: #006600;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.cart-actions button:hover {
+  background-color: #004d00;
+}
+
+/* Call to action buttons */
 .call-to-action {
   display: flex;
   justify-content: space-around;
