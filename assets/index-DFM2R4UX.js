@@ -1,5 +1,5 @@
 (function(){const n=document.createElement("link").relList;if(n&&n.supports&&n.supports("modulepreload"))return;for(const a of document.querySelectorAll('link[rel="modulepreload"]'))o(a);new MutationObserver(a=>{for(const i of a)if(i.type==="childList")for(const d of i.addedNodes)d.tagName==="LINK"&&d.rel==="modulepreload"&&o(d)}).observe(document,{childList:!0,subtree:!0});function c(a){const i={};return a.integrity&&(i.integrity=a.integrity),a.referrerPolicy&&(i.referrerPolicy=a.referrerPolicy),a.crossOrigin==="use-credentials"?i.credentials="include":a.crossOrigin==="anonymous"?i.credentials="omit":i.credentials="same-origin",i}function o(a){if(a.ep)return;a.ep=!0;const i=c(a);fetch(a.href,i)}})();function r(){const t=document.createElement("header");return t.innerHTML=`
-    <img src="/assets/logo.svg" alt="Logo">
+    <img src="src="https://caldena.com/zjed-content/themes/caldena/assets/images/logo.svg"" alt="Logo">
     <nav>
       <a href="#">Home</a>
       <a href="#products">Products</a>
