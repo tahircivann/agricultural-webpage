@@ -96,12 +96,49 @@ nav a:hover {
 .hero {
   position: relative;
   background-image: url('https://caldena.com/zjed-content/uploads/2024/04/240412_slider_prev_03_eng2.jpg');
-  background-size: cover;
-  background-position: center;
+  background-size: contain;
+  /* Ensures the image is fully visible */
+  background-repeat: no-repeat;
+  /* Prevents the image from repeating */
+  background-position: center center;
+  /* Centers the image */
   text-align: center;
   color: #000566;
   padding: 100px 20px;
   flex-grow: 1;
+}
+
+.hero-content {
+  position: relative;
+  text-align: center;
+  color: #000566;
+  padding: 100px 20px;
+}
+
+.hero-content h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.hero-content button {
+  padding: 10px 20px;
+  background-color: #006600;
+  color: white;
+  border: none;
+  cursor: pointer;
+  animation: pulse 2s infinite;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    background-size: cover;
+  }
+}
+
+@media (min-width: 769px) {
+  .hero {
+    background-size: contain;
+  }
 }
 
 .hero h1 {
