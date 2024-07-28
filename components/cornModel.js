@@ -82,7 +82,7 @@ function initThreeJS() {
   // Load the model
   loader.load('https://cdn.glitch.global/00f2d644-93e9-43db-b8e5-cac6ced4b897/corn.glb?v=1722166495354', function(gltf) {
     model = gltf.scene;
-    model.scale.set(1, 1, 1); // Scale the model
+    model.scale.set(4, 4, 4); // Scale the model
     model.position.set(0, -1.5, 0); // Position the model
     scene.add(model);
     console.log("Model loaded", model); // Debug log to confirm model loading
@@ -106,7 +106,7 @@ function initThreeJS() {
         .to(model.position, { x: 2, y: -1.5, z: -2, duration: 1, ease: 'power1.inOut' })
         .to(model.position, { x: -1, y: -1.5, z: -4, duration: 1, ease: 'power1.inOut' })
         .to(model.position, { x: 16, y: -1.5, z: -2, duration: 1, ease: 'power1.inOut' })
-        .to(model.position, { x: 0, y: -1.5, z: -1, duration: 1, ease: 'power1.inOut' });
+        .to(model.position, { x: 0, y: -1.5, z: -12, duration: 1, ease: 'power1.inOut' });
   
       // Animations for rotation
       tl.to(model.rotation, { z: Math.PI * 0.25, duration: 1, ease: 'power1.inOut' }, 0)
