@@ -11,6 +11,17 @@ body {
   background-color: #ffffff;
 }
 
+#app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header,
+footer {
+  flex-shrink: 0;
+}
+
 /* Header Styles */
 header {
   display: flex;
@@ -90,7 +101,7 @@ nav a:hover {
   text-align: center;
   color: #000566;
   padding: 100px 20px;
-  min-height: 400px;
+  flex-grow: 1;
 }
 
 .hero h1 {
@@ -127,6 +138,7 @@ nav a:hover {
   padding: 50px 20px;
   background-color: #e6f2e6;
   min-height: 200px;
+  flex-grow: 1;
 }
 
 .introduction .icon {
@@ -147,7 +159,7 @@ footer {
   background-color: #004d00;
   color: white;
   text-align: center;
-  min-height: 100px;
+  flex-shrink: 0;
 }
 
 /* Responsive Grid for Product Showcase */
@@ -156,6 +168,7 @@ footer {
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   padding: 20px;
+  flex-grow: 1;
 }
 
 .product-card {
@@ -207,6 +220,7 @@ footer {
   display: flex;
   flex-direction: column;
   padding: 20px;
+  flex-grow: 1;
 }
 
 .contact-form input,
@@ -249,6 +263,7 @@ footer {
 .product-details-page {
   padding: 40px 20px;
   background-color: #f9f9f9;
+  flex-grow: 1;
 }
 
 .product-overview {
@@ -354,6 +369,7 @@ footer {
 /* Shopping Cart */
 .cart-page {
   padding: 40px 20px;
+  flex-grow: 1;
 }
 
 .cart-page h2 {
