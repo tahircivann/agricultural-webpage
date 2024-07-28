@@ -6,40 +6,51 @@ import { Contact } from './components/contact.js';
 
 const app = document.getElementById('app');
 window.cart = []; // Make the cart globally available
-
 function renderHomePage() {
   app.innerHTML = '';
   app.appendChild(Header());
-  app.appendChild(Hero());
-  app.appendChild(Introduction());
+  const hero = Hero();
+  hero.classList.add('flex-grow');
+  app.appendChild(hero);
+  const intro = Introduction();
+  intro.classList.add('flex-grow');
+  app.appendChild(intro);
   app.appendChild(Footer());
 }
 
 function renderProductsPage() {
   app.innerHTML = '';
   app.appendChild(Header());
-  app.appendChild(ProductShowcase());
+  const showcase = ProductShowcase();
+  showcase.classList.add('flex-grow');
+  app.appendChild(showcase);
   app.appendChild(Footer());
 }
 
 function renderContactPage() {
   app.innerHTML = '';
   app.appendChild(Header());
-  app.appendChild(Contact());
+  const contact = Contact();
+  contact.classList.add('flex-grow');
+  app.appendChild(contact);
   app.appendChild(Footer());
 }
 
 function renderProductDetailPage(productId) {
   app.innerHTML = '';
   app.appendChild(Header());
-  app.appendChild(ProductDetail(productId));
+  const detail = ProductDetail(productId);
+  detail.classList.add('flex-grow');
+  app.appendChild(detail);
   app.appendChild(Footer());
 }
 
 function renderCartPage() {
   app.innerHTML = '';
   app.appendChild(Header());
-  app.appendChild(Cart());
+  const cart = Cart();
+  cart.classList.add('flex-grow');
+  app.appendChild(cart);
   app.appendChild(Footer());
 }
 
