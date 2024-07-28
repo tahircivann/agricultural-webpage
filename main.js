@@ -3,6 +3,7 @@ import { Hero } from './components/hero.js';
 import { Introduction } from './components/introduction.js';
 import { Footer } from './components/footer.js';
 import { Contact } from './components/contact.js';
+import { CornModel } from './components/cornModel.js';
 
 const app = document.getElementById('app');
 window.cart = []; // Make the cart globally available
@@ -64,10 +65,21 @@ window.addEventListener('hashchange', () => {
     renderContactPage();
   } else if (window.location.hash === '#cart') {
     renderCartPage();
+  } else if (window.location.hash === '#corn-model') {
+    renderCornModelPage();
   } else {
     renderHomePage();
   }
 });
+
+function renderCornModelPage() {
+  app.innerHTML = '';
+  app.appendChild(Header());
+  const cornModel = CornModel();
+  cornModel.classList.add('flex-grow');
+  app.appendChild(cornModel);
+  app.appendChild(Footer());
+}
 
 renderHomePage();
 
