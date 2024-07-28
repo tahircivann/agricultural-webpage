@@ -35,6 +35,10 @@ header img {
   width: 150px;
 }
 
+nav {
+  display: flex;
+}
+
 nav a {
   margin: 0 15px;
   text-decoration: none;
@@ -44,6 +48,29 @@ nav a {
 
 nav a:hover {
   color: #369f26;
+}
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+    display: none;
+  }
+
+  nav a {
+    margin: 10px 0;
+  }
+
+  .menu-toggle {
+    display: block;
+    cursor: pointer;
+    font-size: 24px;
+  }
+
+  .menu-toggle.active+nav {
+    display: flex;
+  }
 }
 
 /* Cart Icon Styles */
@@ -97,11 +124,8 @@ nav a:hover {
   position: relative;
   background-image: url('https://caldena.com/zjed-content/uploads/2024/04/240412_slider_prev_03_eng2.jpg');
   background-size: contain;
-  /* Ensures the image is fully visible */
   background-repeat: no-repeat;
-  /* Prevents the image from repeating */
   background-position: center center;
-  /* Centers the image */
   text-align: center;
   color: #000566;
   padding: 100px 20px;
@@ -130,28 +154,13 @@ nav a:hover {
 }
 
 @media (max-width: 768px) {
-  .hero {
-    background-size: cover;
+  .hero-content h1 {
+    font-size: 2em;
   }
-}
 
-@media (min-width: 769px) {
-  .hero {
-    background-size: contain;
+  .hero-content button {
+    padding: 8px 16px;
   }
-}
-
-.hero h1 {
-  font-size: 2.5em;
-}
-
-.hero button {
-  padding: 10px 20px;
-  background-color: #006600;
-  color: white;
-  border: none;
-  cursor: pointer;
-  animation: pulse 2s infinite;
 }
 
 @keyframes pulse {
@@ -171,6 +180,7 @@ nav a:hover {
 /* Introduction Section */
 .introduction {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   padding: 50px 20px;
   background-color: #e6f2e6;
@@ -180,6 +190,7 @@ nav a:hover {
 
 .introduction .icon {
   text-align: center;
+  margin: 20px;
 }
 
 .introduction .icon img {
@@ -202,7 +213,7 @@ footer {
 /* Responsive Grid for Product Showcase */
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
   padding: 20px;
   flex-grow: 1;
