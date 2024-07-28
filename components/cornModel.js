@@ -8,40 +8,35 @@ gsap.registerPlugin(ScrollTrigger);
 export function CornModel() {
   const section = document.createElement('section');
   section.innerHTML = `
-  <canvas id="three-canvas"></canvas>
+ <canvas id="three-canvas"></canvas>
+<div id="app">
+
   <div class="content">
-  <div class="loading">Loading</div>
-  <div class="trigger"></div>
-  <div class="section">
-  <h1>Corn Model</h1>
-  <h3>The journey of a corn.</h3>
-  <p>Experience the animation.</p>
-  <div class="scroll-cta">Scroll</div>
-      </div>
-      <div class="section right">
-      <h2>Watch it grow...</h2>
-      </div>
-      <div class="ground-container">
+    <div class="ground-container">
       <div class="parallax ground"></div>
       <div class="section right">
-      <h2>..except they leave the ground.</h2>
-      <p>Saaay what!?.</p>
-        </div>
-        <div class="section">
-          <h2>They grow through the field.</h2>
-          <p>For realsies!</p>
-        </div>
-        <div class="section right">
-          <h2>Defying all known farming techniques.</h2>
-          <p>It's actual magic!</p>
-          <ul class="credits">
+        <h2>The ground.</h2>
+        <p>Saaay what!?.</p>
+      </div>
+      <div class="section">
+        <h2>They grow through the field.</h2>
+        <p>For realsies!</p>
+      </div>
+      <div class="section right">
+        <h2>Defying all known farming techniques.</h2>
+        <p>It's actual magic!</p>
+        <ul class="credits">
           <li>Corn model by <a href="https://poly.google.com/view/8ciDd9k8wha" target="_blank">Google</a></li>
           <li>Animated using <a href="https://greensock.com/scrolltrigger/" target="_blank">GSAP ScrollTrigger</a></li>
-          </ul>
-          </div>
-          <div class="parallax clouds"></div>
+        </ul>
       </div>
+      <div class="parallax clouds"></div>
     </div>
+  </div>
+  <footer>
+    <!-- Footer content -->
+  </footer>
+</div>
   `;
 
   initThreeJS();
