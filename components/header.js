@@ -6,6 +6,7 @@ export function Header() {
       <a href="#">Home</a>
       <a href="#products">Products</a>
       <a href="#contact">Contact</a>
+      <a href="#corn-model">About</a>
     </nav>
     <div class="cart-icon" onclick="location.hash='#cart'">
       <span class="material-icons">shopping_cart</span>
